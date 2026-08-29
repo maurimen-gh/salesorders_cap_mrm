@@ -1,0 +1,6 @@
+ID;Name;Description;ReleaseDate;DiscontinuedDate;Price;Height;Width;Depth;Quantity;UnitOfMeasure_ID;Order_ID
+08c142fa-01b0-441d-b01d-eeaa3291f6f0;Bread;Whole grain bread;2026-01-13;2026-01-18;1;1.2;2;3;20;PI;58a8c519-2aa6-4289-84c3-d79de5a67dd0
+aa74747d-c297-4f0a-981a-8fb0ca92b756;Milk;Milk,Low fat milk;2026-04-13;2026-07-18;1;1.2;1;3;50;L;58a8c519-2aa6-4289-84c3-d79de5a67dd0
+ea610da1-ea93-4258-85e1-099167d67bf9;Vint soda;Vint soda,Americana Variety - Mix of 6 flavors;2026-05-15;2026-09-19;2;3.2;4;3;30;L;aa7d843f-c6c5-4bc9-846b-ddac07966f10
+9e800613-7b96-4203-8817-f25fcc89dfbc;Fruit Punch;Fruit Punch,"Mango flavor, 8.3 Ounce Cans (Pack of 24)";2026-07-01;2026-09-30;1.2;3.2;4.5;3.9;25;L;aa7d843f-c6c5-4bc9-846b-ddac07966f10
+fe613858-7385-4c1c-8f4e-b3439a5ec637;Cranberry Juice;Cranberry Juice,16-Ounce Plastic Bottles (Pack of 12);2026-01-01;2026-10-30;1.5;2.5;4.2;3.3;10;L;de411986-f74c-4082-83bc-2aa5c5a25aad

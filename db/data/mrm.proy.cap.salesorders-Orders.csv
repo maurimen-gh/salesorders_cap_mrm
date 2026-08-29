@@ -1,0 +1,4 @@
+ID;Email;FirstName;LastName;Country;CreateOn;DeliveryDate;OrderStatus;ImageUrl    
+58a8c519-2aa6-4289-84c3-d79de5a67dd0;client1@client1.com.bo;Kyros;N. Ferris;BO;2026-01-13;2026-01-13;1;/product/webapp/assets/img1.jpg
+aa7d843f-c6c5-4bc9-846b-ddac07966f10;client2@client2.com.bo;Debbie;R. Morris;BO;2026-06-09;2026-06-09;1;/product/webapp/assets/img2.jpg
+de411986-f74c-4082-83bc-2aa5c5a25aad;client3@client3.com.bo;Terrence;J. Eagle;BO;2026-11-27;2026-11-27;1;/product/webapp/assets/img3.jpg

@@ -1,0 +1,8 @@
+### Get Orders
+### GET http://localhost:4004/manage-orders/GetOrders
+GET http://localhost:4004/odata/v4/manage-orders/GetOrders
+
+### Get Orders
+GET http://localhost:4004/odata/v4/manage-orders/GetOrders('58a8c519-2aa6-4289-84c3-d79de5a67dd0')
+
+

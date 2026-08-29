@@ -1,0 +1,56 @@
+
+CREATE TABLE mrm_proy_cap_salesorders_Orders (
+  ID NVARCHAR(36) NOT NULL,
+  createdAt TIMESTAMP_TEXT,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP_TEXT,
+  modifiedBy NVARCHAR(255),
+  Email NVARCHAR(30),
+  FirstName NVARCHAR(30) NOT NULL,
+  LastName NVARCHAR(255),
+  Country NVARCHAR(30),
+  CreateOn DATE_TEXT DEFAULT CURRENT_TIMESTAMP,
+  DeliveryDate DATETIME_TEXT,
+  OrderStatus INTEGER,
+  ImageUrl NVARCHAR(255),
+  PRIMARY KEY(ID)
+);
+
+CREATE TABLE mrm_proy_cap_salesorders_Items (
+  ID NVARCHAR(36) NOT NULL,
+  createdAt TIMESTAMP_TEXT,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP_TEXT,
+  modifiedBy NVARCHAR(255),
+  Name NVARCHAR(40),
+  Description NVARCHAR(40) NOT NULL,
+  ReleaseDate DATE_TEXT,
+  DiscontinuedDate DATE_TEXT,
+  Price DECIMAL(12, 2),
+  Height DECIMAL(15, 3),
+  Width DECIMAL(13, 3),
+  Depth DECIMAL(12, 2),
+  Quantity DECIMAL(16, 2),
+  UnitOfMeasure_ID NVARCHAR(3),
+  Order_ID NVARCHAR(36),
+  PRIMARY KEY(ID)
+);
+
+CREATE TABLE mrm_proy_cap_salesorders_UnitOfMeasures (
+  ID NVARCHAR(3) NOT NULL,
+  Description NVARCHAR(255),
+  PRIMARY KEY(ID)
+);
+
+CREATE TABLE mrm_proy_cap_salesorders_UnitOfMeasures_texts (
+  locale NVARCHAR(14) NOT NULL,
+  ID NVARCHAR(3) NOT NULL,
+  Description NVARCHAR(255),
+  PRIMARY KEY(locale, ID)
+);
+
+CREATE VIEW localized_mrm_proy_cap_salesorders_UnitOfMeasures AS SELECT
+  L_0.ID,
+  coalesce(localized_1.Description, L_0.Description) AS Description
+FROM (mrm_proy_cap_salesorders_UnitOfMeasures AS L_0 LEFT JOIN mrm_proy_cap_salesorders_UnitOfMeasures_texts AS localized_1 ON localized_1.ID = L_0.ID AND localized_1.locale = session_context( '$user.locale' ));
+
