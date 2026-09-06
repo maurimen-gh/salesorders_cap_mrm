@@ -1,6 +1,7 @@
 namespace mrm.proy.cap.salesorders;
 
-using { cuid, managed } from '@sap/cds/common';
+using { cuid } from '@sap/cds/common';
+//using { cuid, managed } from '@sap/cds/common'; //OK managed
 
 //entity Orders : cuid, managed {
 entity Orders : cuid {
@@ -19,7 +20,8 @@ entity Orders : cuid {
                            on ToItems.Order = $self;  // uno a muchos*/
 }
 
-define entity Items : cuid, managed {
+// define entity Items : cuid, managed { //OK managed
+define entity Items : cuid {
     key ID               : UUID @mandatory;
         Name             : String(40);
         Description      : String(40) not null @mandatory;

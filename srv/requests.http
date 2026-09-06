@@ -1,8 +1,42 @@
 ### Get Orders
-### GET http://localhost:4004/manage-orders/GetOrders
-GET http://localhost:4004/odata/v4/manage-orders/GetOrders
+//GET http://localhost:4004/manage-orders/GetOrders
+//OK GET http://localhost:4004/odata/v4/manage-orders/GetOrders
+GET http://localhost:4004/odata/v4/manage-orders/Orders
 
 ### Get Orders
-GET http://localhost:4004/odata/v4/manage-orders/GetOrders('58a8c519-2aa6-4289-84c3-d79de5a67dd0')
+// OK GET http://localhost:4004/odata/v4/manage-orders/GetOrders('58a8c519-2aa6-4289-84c3-d79de5a67dd0')
+GET http://localhost:4004/odata/v4/manage-orders/Orders('58a8c519-2aa6-4289-84c3-d79de5a67dd0')
 
+### Create Order
+//POST http://localhost:4004/odata/v4/manage-orders/Orders HTTP/1.1
+POST http://localhost:4004/odata/v4/manage-orders/Orders HTTP/1.1
+Content-Type: application/json; charset=utf-8
 
+{
+        "ID"           : "54a8c519-2aa6-4289-84c3-d79de5a67abc",
+        "Email"        : "cliente1@abc.com.bo",
+        "FirstName"    : "Mauricio",
+        "LastName"     : "Rivera",
+        "Country"      : "BO",
+       // "CreateOn"     : "2026-09-05",
+        "DeliveryDate" : "2026-09-05",
+        "OrderStatus"  : "1",
+        "ImageUrl"     : ""
+        //ToItems         : Composition of many Items                          
+}
+
+### Update Order
+PUT http://localhost:4004/odata/v4/manage-orders/Orders('54a8c519-2aa6-4289-84c3-d79de5a67abc') HTTP/1.1
+Content-Type: application/json; charset=utf-8
+
+{
+    "Email"        : "cliente1@abc.com.bo",
+    "FirstName"    : "Gabriela",
+    "LastName"     : "Rivera",
+    "Country"      : "BO",
+    "DeliveryDate" : "2026-09-05",
+    "OrderStatus"  : "2"
+}
+
+### Delete Orders
+DELETE http://localhost:4004/odata/v4/manage-orders/Orders('54a8c519-2aa6-4289-84c3-d79de5a67abc')
