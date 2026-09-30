@@ -3,13 +3,13 @@ using ManageOrders as service from '../../srv/orders';
 annotate service.Orders with @odata.draft.enabled;
 
 annotate service.Orders with {
-    ImageUrl    @title: 'Image URL';
+    ImageUrl    @title: '{i18n>ImageUrl}';
     Email       @title: '{i18n>Email}'; //'E-mail';
-    FirstName   @title: 'FirstName';
-    LastName    @title: 'LastName';
-    Country     @title: 'Country';
-    CreateOn    @title: 'Create On';
-    OrderStatus @title: 'Order Status';
+    FirstName   @title: '{i18n>FirstName}';
+    LastName    @title: '{i18n>LastName}';
+    Country     @title: '{i18n>Country}';
+    CreateOn    @title: '{i18n>CreateOn}';
+    OrderStatus @title: '{i18n>OrderStatus}';
 }
 
 annotate service.Orders with {
@@ -26,7 +26,7 @@ annotate service.Orders with @(
     UI.SelectionFields           : [
         FirstName,
         LastName,
-        Country,
+        Country_code,
         OrderStatus_Code
     ],
 
@@ -63,9 +63,18 @@ annotate service.Orders with @(
             $Type: 'UI.DataField',
             Value: LastName,
         },
-        {
+     /*   {
             $Type: 'UI.DataField',
-            Value: Country,
+            Value: Country_code,
+        },*/
+        {
+            $Type             : 'UI.DataField',
+            Value             : Country.name, // OrderStatus_Code,
+           // Label             : 'Country',
+            @HTML5.CssDefaults: {
+                $Type: 'HTML5.CssDefaultsType',
+                width: '10rem',
+            },
         },
         {
             $Type: 'UI.DataField',
@@ -74,7 +83,7 @@ annotate service.Orders with @(
         {
             $Type             : 'UI.DataField',
             Value             : OrderStatus.name, // OrderStatus_Code,
-            Label             : 'Status',
+           // Label             : 'Status',
             Criticality       : OrderStatus.Criticality,
             @HTML5.CssDefaults: {
                 $Type: 'HTML5.CssDefaultsType',
@@ -114,7 +123,7 @@ annotate service.Orders with @(
                 $Type: 'UI.DataField',
                 Label: '{i18n>Country}',
                 //'Country',
-                Value: Country,
+                Value: Country_code,
             },
             {
                 $Type: 'UI.DataField',
@@ -137,7 +146,7 @@ annotate service.Orders with @(
             },
             {
                 $Type: 'UI.DataField',
-                Label: 'ImageUrl',
+                Label: '{i18n>ImageUrl}',
                 Value: ImageUrl,
             },
         ],

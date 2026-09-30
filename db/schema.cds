@@ -3,7 +3,8 @@ namespace mrm.proy.cap.salesorders;
 using {
     cuid,
     managed,
-    sap.common.CodeList
+    sap.common.CodeList,
+    sap.common.Countries
 } from '@sap/cds/common';
 //using { cuid, managed } from '@sap/cds/common'; //OK managed
 
@@ -13,7 +14,7 @@ entity Orders : cuid, managed {
     Email        : String(30)          @mandatory;
     FirstName    : String(30) not null @mandatory;
     LastName     : String;
-    Country      : String(30);
+    Country      : Association to Countries default 'BO';
     CreateOn     : Date default $now;
     DeliveryDate : DateTime;
     OrderStatus  : Association to Status; // OrderStatus_Code
